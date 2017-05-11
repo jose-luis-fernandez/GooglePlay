@@ -8,7 +8,6 @@
 public class Aplicacion extends Producto
 {
     
-    private String nombre;
     private double tamano;
     private Categoria categoria;
 
@@ -17,14 +16,9 @@ public class Aplicacion extends Producto
      */
     public Aplicacion(String nombre, double tamano, Categoria categoria)
     {
-        this.nombre = nombre;
+        super(nombre);
         this.tamano = tamano;
         this.categoria = categoria;
-    }
-    
-    public String getNombre()
-    {
-        return nombre;
     }
     
     public double getTamanoEnMB()
@@ -53,6 +47,26 @@ public class Aplicacion extends Producto
         }
         
         return categoria;
+    }
+    
+    public double getPrecio()
+    {
+        double precio = 0;
+        if(getNumeroVecesVendido() < 2){
+            precio = 0.99;
+        }
+        else{
+            if(getCategoria().equals("Juegos")){
+                precio = 5;
+            }
+            else if(getCategoria().equals("Productividad")){
+                precio = 10;
+            }
+            else{
+                precio = 2;
+            }
+        }
+        return precio;
     }
     
     

@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Usuario here.
  * 
@@ -9,6 +9,7 @@ public class Usuario
 {
     
     private String correo;
+    private ArrayList<Producto> productosComprados;
     
 
     /**
@@ -17,11 +18,17 @@ public class Usuario
     public Usuario(String correo)
     {
         this.correo = correo;
+        productosComprados = new ArrayList<Producto>();
     }
     
     public String getNombreCuenta()
     {
         return correo;
+    }
+    
+    public void comprarProducto(Producto producto)
+    {
+        productosComprados.add(producto);
     }
     
 }

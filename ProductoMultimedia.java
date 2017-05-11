@@ -5,10 +5,9 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ProductoMultimedia extends Producto
+public abstract class ProductoMultimedia extends Producto
 {
     
-    private String titulo;
     private int ano;
 
     /**
@@ -16,18 +15,20 @@ public class ProductoMultimedia extends Producto
      */
     public ProductoMultimedia(String titulo, int ano)
     {
-        this.titulo = titulo;
+        super(titulo);
         this.ano = ano;
     }
     
     public String getTitulo()
     {
-        return titulo;
+        return super.getNombre();
     }
     
     public int getAno()
     {
         return ano;
     }
+    
+    
     
 }
